@@ -1,12 +1,14 @@
 module.exports = app => {
-  const ensureAuth = require('../middlewares/ensureAuth')
+  const ensureAuth = require('../middlewares/ensureAuth.js')
   const reservation = require("../controllers/ReservationController.js");
   const user = require("../controllers/UserController.js");
   const hotel = require("../controllers/HotelController.js");
   const room = require("../controllers/RoomController.js");
+  const citty = require ("../controllers/CittyController.js");
+  const country = require("../controllers/CountryController.js");
   const router = require("express").Router();
 
-  //falta adicionar o middleware ensureAuth às respetivas rotas
+  //falta acrescentar o middleware ensureAuth às respetivas rotas
 
   //users
 
@@ -35,6 +37,12 @@ module.exports = app => {
   router.get("/hotel", hotel.findOne);
   router.patch("/hotel", hotel.update);
   router.delete("/hotel", hotel.delete);
+
+  //citty 
+
+  //country
+
+  //rating
 
   app.use("", router);
 };

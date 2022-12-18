@@ -10,5 +10,8 @@ db.user = require("./userSchema")(mongoose);
 db.room = require("./roomSchema")(mongoose);
 db.reservation = require("./reservationSchema")(mongoose);
 db.hotel = require("./hotelSchema")(mongoose);
+db.citty = require("./cittySchema")(mongoose);
+db.country = require("./countrySchema")(mongoose);
+db.rating = require("./ratingSchema")(mongoose);
 
 module.exports = db;
