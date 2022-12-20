@@ -37,6 +37,7 @@ module.exports = app => {
   router.get("/hotel", hotel.findOne);
   router.patch("/hotel", hotel.update);
   router.delete("/hotel", hotel.delete);
+  router.get("/hotels", hotel.findAll);
 
   //citty 
 
