@@ -31,6 +31,16 @@ exports.findOne = (req, res) => {
     })
 };
 
+exports.findAll = (req, res) => {
+    Hotel.find({}).then(data => {
+        if (!data)
+            res.status(404).send({ message: "Hotels not found" });
+        else res.send(data);
+    }).catch(err => {
+        res.status(500).send({ message: "Error retrieving Hotels" });
+    })
+};
+
 exports.delete = (req, res) => {
     const _id = req.body._id;
 
@@ -76,3 +86,5 @@ exports.update = (req, res) => {
             });
         });
 };
+
+// Encontrar todos os hotéis
