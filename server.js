@@ -3,10 +3,6 @@ const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-
 app.use(cors());
 
 app.use(express.json());
@@ -17,7 +13,7 @@ const db = require("./src/models");
 
 db.mongoose
   .connect(db.url, {
-    dbName: 'Hotel4U',
+    dbName: 'Hotel',
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
